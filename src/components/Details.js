@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MovieList extends React.Component {
+class Details extends React.Component {
     constructor(props) {
         super(props);
         
@@ -9,10 +9,10 @@ class MovieList extends React.Component {
     render() {
         return (
             <div>
-                Movie list
+                Details Page
             </div>
         );
     }
 }
 
-export default MovieList
+export default Details

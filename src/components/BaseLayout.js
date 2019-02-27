@@ -12,7 +12,6 @@ class BaseLayout extends React.Component {
             <div>
                 <NavBar />
                 {this.props.children}
-                Footer
             </div>
         );
     }

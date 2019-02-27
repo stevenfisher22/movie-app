@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
+import './components/CSS/app.css';
 
 class App extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
-       movies: []
+      movies: []
     }
   }
   
 
   componentWillMount() {
-    fetch(url)  
+    // fetch(url)  
   };
   render() {
     return (
-      <div >
-        App
+      <div>
+        <img src="../images/bg_3.jpg" alt="popcorn"></img>
       </div>
     );
   }
