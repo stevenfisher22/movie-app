@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                 <Navbar.Brand href="/" className="brand">Movie App</Navbar.Brand>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/movie-list">Movie List</NavLink>
-                <Link to="/movie-details">Movie Details</Link>
+                {/* <Link to="/movie-details">Movie Details</Link> */}
             </Navbar>
             // <div>
             //     <Link to="/">Home</Link>
