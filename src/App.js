@@ -3,6 +3,7 @@ import './components/CSS/app.css';
 import MoviePres from './components/MoviePres';
 import { connect } from 'react-redux';
 import movieData from './actions/movieData';
+import MovieList from './components/MovieList';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,6 @@ class App extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result.results)
           this.props.onMovie(result.results)
           this.setState({
             movies: result.results
@@ -30,8 +30,8 @@ class App extends Component {
 
   render() {
     const { movies } = this.state;
-    let movieList = movies.map(item =>{
-      return <li><MoviePres title={item.title} desc={item.overview} image= {item.poster_path  ? item.poster_path : ""}/></li>
+    let movieList = movies.map(item => {
+      return <li><MoviePres title={item.title} desc={item.overview} image= {item.poster_path ? item.poster_path : ""}/></li>
     })
     
     return (
@@ -45,14 +45,16 @@ class App extends Component {
   }
 }
 
-function mapStateToProps() {
-  return 
-}
-
-function mapDispatchToProps(dispatch) {
-  return{
-    onMovie: (data) => dispatch(movieData(data))
+function mapStateToProps(state) {
+  return {
+    data: state.data
   }
 }
 
-export default connect(null, mapDispatchToProps)(App)
+function mapDispatchToProps(dispatch) {
+  return {
+    onMovie: data => dispatch(movieData(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,12 +1,16 @@
-function movieList(state,action) {
+const initialState = {
+    data: []
+};
+
+function movieList(state, action) {
     if(state === undefined){
-        state = {data:[]}
+        state = initialState;
     }
     switch (action.type){
         case "MOVIEDATA": 
             return {
                 ...state,
-                data: action.dataPayload
+                data: action.data
             }
         default:
             return state
